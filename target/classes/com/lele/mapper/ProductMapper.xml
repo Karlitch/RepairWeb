@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lele.mapper.ProductMapper">
+    <resultMap id="productThing" type="Product">
+        <id column="id" property="id"/>
+        <result column="proName" property="proName"/>
+        <result column="proInfo" property="proInfo"/>
+        <result column="proImg" property="proImg"/>
+        <result column="proType" property="proType"/>
+        <association property="type" column="proType" javaType="Type">
+            <id column="id" property="id"/>
+            <result column="type" property="type"/>
+        </association>
+        <association property="company" column="proComp" javaType="Company">
+            <id column="id" property="id"/>
+            <result column="compName" property="compName"/>
+            <result column="compInfo" property="compInfo"/>
+            <result column="compTel" property="compTel"/>
+            <result column="compAddr" property="compAddr"/>
+            <result column="compEmail" property="compEmail"/>
+            <result column="opentime" property="opentime"/>
+            <result column="compPassword" property="compPassword"/>
+        </association>
+    </resultMap>
+
+    <select id="queryAllPro" resultMap="productThing">
+        select product.id,proName,proImg,proInfo,type.type,company.compName
+        from product,company,type
+        where proComp = company.id and proType = type.id
+    </select>
+
+    <select id="getPro" resultMap="productThing">
+        select product.id,proName,proImg,proInfo,type.type,company.compName
+        from product
+        left join company on proComp = company.id
+        left join type on proType = type.id
+        where proName like "%"#{proName}"%"
+    </select>
+
+    <select id="getProById" resultMap="productThing">
+        select product.id,proName,proImg,proInfo,type.type,company.compName
+        from product
+        left join company on proComp = company.id
+        left join type on proType = type.id
+        where product.id = #{id}
+    </select>
+    <update id="updatePro" parameterType="product">
+        update product set
+        proName=#{proName},proInfo=#{proInfo},proType=#{proType}
+        where product.id=#{id}
+    </update>
+
+    <delete id="deletePro" parameterType="product">
+        delete from product where product.id = #{id}
+    </delete>
+
+    <insert id="addPro" parameterType="product">
+        insert into product(proName, proInfo, proImg, proType,proComp)
+        values (#{proName},#{proInfo},#{proImg},#{proType},#{proComp})
+    </insert>
+
+</mapper>

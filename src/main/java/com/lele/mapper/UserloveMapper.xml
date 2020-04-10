@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lele.mapper.UserloveMapper">
+
+    <resultMap id="productThing" type="Product">
+        <result property="proName" column="proName"/>
+        <result column="proInfo" property="proInfo"/>
+        <result column="proImg" property="proImg"/>
+        <association property="proType"  javaType="Type">
+            <result column="type" property="type"/>
+        </association>
+        <association property="proComp" javaType="Company">
+            <result column="compName" property="compName"/>
+        </association>
+    </resultMap>
+
+    <resultMap id="userloveThing" type="User">
+        <result property="userName" column="userName"/>
+        <result property="userTel" column="userTel"/>
+        <collection ofType="Product" select="getPro" property="productList" column="id"/>
+    </resultMap>
+
+    <select id="getPro" resultMap="productThing">
+       SELECT proName,proImg,proInfo,type.type,company.compName
+       FROM userlove
+       LEFT JOIN product ON proId=product.id
+       LEFT JOIN type ON proType=type.id
+       LEFT JOIN company ON proComp=company.id
+       where userId = #{id}
+        </select>
+    <select id="queryAllUserlove" resultMap="userloveThing">
+        select * from user where id = #{id}
+    </select>
+
+</mapper>

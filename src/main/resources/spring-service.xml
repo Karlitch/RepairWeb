@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+    http://www.springframework.org/schema/beans/spring-beans.xsd
+    http://www.springframework.org/schema/context
+    http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <!-- 扫描service相关的bean -->
+    <context:component-scan base-package="com.lele.service" />
+
+    <!--ServiceImpl注入到IOC容器中-->
+    <bean id="CompanyServiceImpl" class="com.lele.service.CompanyServiceImpl">
+        <property name="companyMapper" ref="companyMapper"/>
+    </bean>
+
+    <bean class="com.lele.service.ProductServiceImpl" id="productServiceImpl">
+        <property name="productMapper" ref="productMapper"/>
+    </bean>
+
+    <bean class="com.lele.service.TypeServiceImpl" id="typeServiceImpl">
+        <property name="typeMapper" ref="typeMapper"/>
+    </bean>
+
+    <bean class="com.lele.service.UserServiceImpl" id="userServiceImpl">
+        <property name="userMapper" ref="userMapper"/>
+    </bean>
+
+    <bean class="com.lele.service.UserloveServiceImpl" id="userloveServiceImpl">
+        <property name="userloveMapper" ref="userloveMapper"/>
+    </bean>
+
+
+    <!-- 配置事务管理器 -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!-- 注入数据库连接池 -->
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+
+</beans>

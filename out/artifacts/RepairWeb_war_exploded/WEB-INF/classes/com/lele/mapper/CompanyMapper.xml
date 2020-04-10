@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.lele.mapper.CompanyMapper">
+    <resultMap id="queryOne" type="com.lele.pojo.Company">
+        <id column="id" property="id"/>
+        <result column="compName" property="compName"/>
+        <result column="compInfo" property="compInfo"/>
+        <result column="compTel" property="compTel"/>
+        <result column="compAddr" property="compAddr"/>
+        <result column="compEmail" property="compEmail"/>
+        <result property="compPassword" column="compPassword"/>
+        <result column="opentime" property="opentime"/>
+        <result column="closetime" property="closetime"/>
+        <collection property="productList" column="id" ofType="com.lele.pojo.Product" select="getPro"/>
+    </resultMap>
+    <resultMap id="showPro" type="com.lele.pojo.Product">
+        <id column="id" property="id"/>
+        <result property="proName" column="proName"/>
+        <result column="proInfo" property="proInfo"/>
+        <result column="proImg" property="proImg"/>
+        <association property="type" column="proType"  javaType="Type">
+            <id column="id" property="id"/>
+            <result column="type" property="type"/>
+        </association>
+        <association property="company" column="proComp" javaType="Company">
+            <id column="id" property="id"/>
+            <result column="compName" property="compName"/>
+        </association>
+    </resultMap>
+
+    <select id="queryAllComp" resultType="Company">
+        select * from company;
+    </select>
+    <select id="getComp" resultType="Company">
+        select * from company where compName like "%"#{compName}"%"
+    </select>
+
+    <select id="getByEmail" resultType="company">
+        select * from company where compEmail = #{compEmail}
+    </select>
+
+    <insert id="addComp" parameterType="Company">
+        insert into company(compName, compInfo, compTel, compAddr, compEmail, opentime, compPassword)
+        values (#{compName},#{compInfo},#{compTel},#{compAddr},#{compEmail},#{opentime},#{compPassword})
+    </insert>
+    <delete id="deleComp" parameterType="int">
+        delete from company where id = #{id}
+    </delete>
+    <update id="updateComp" parameterType="Company">
+        update company set
+        compName=#{compName},compInfo=#{compInfo},compTel=#{compTel},compAddr=#{compAddr},compEmail=#{compEmail},opentime=#{opentime},closetime=#{closetime},compPassword=#{compPassword}
+        where company.id = #{id}
+    </update>
+    <update id="updateCompPassword" parameterType="map">
+        update company set compPassword=#{compPassword}
+    </update>
+
+    <select id="compLogin" resultMap="queryOne">
+        select * from company where compEmail = #{compEmail} and compPassword = #{compPassword}
+    </select>
+
+    <select id="compLoginInfo" resultMap="queryOne">
+        select * from company where compEmail = #{compEmail}
+    </select>
+    <select id="getPro" resultMap="showPro">
+        SELECT product.id, proName, proInfo, proImg,type,compName,compInfo
+        FROM product
+       LEFT JOIN type ON proType=type.id
+       LEFT JOIN company ON proComp=company.id
+       where company.id = #{compEmail}
+    </select>
+</mapper>

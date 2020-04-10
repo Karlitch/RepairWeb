@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+
+    <typeAliases>
+        <package name="com.lele.pojo"/>
+    </typeAliases>
+    <mappers>
+        <mapper resource="com/lele/mapper/CompanyMapper.xml"/>
+        <mapper resource="com/lele/mapper/ProductMapper.xml"/>
+        <mapper resource="com/lele/mapper/TypeMapper.xml"/>
+        <mapper resource="com/lele/mapper/UserMapper.xml"/>
+        <mapper resource="com/lele/mapper/UserloveMapper.xml"/>
+    </mappers>
+
+</configuration>
