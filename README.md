@@ -1,4 +1,4 @@
-<h1>简易的 java维修信息服务平台
+<h1>简易的 java维修信息服务平台</h1>
 
 Java后台框架：Spring、SpringMVC、Mybatis
 
