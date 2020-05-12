@@ -1,4 +1,4 @@
-#简易的 java维修信息服务平台
+<h1>简易的 java维修信息服务平台
 
 Java后台框架：Spring、SpringMVC、Mybatis
 
@@ -18,6 +18,7 @@ Java后台框架：Spring、SpringMVC、Mybatis
 查询页面
 <img src="web/images/查询.png" alt="查询">
 通过Ajax与json实现预加载功能。
+<br>
 <br>
 商品详情页面
 <img src="web/images/商品详情页面.png" alt="商品详情页面">
