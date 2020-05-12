@@ -80,8 +80,8 @@
         <!-- Logo Header -->
         <div class="logo-header">
             <a href="${pageContext.request.contextPath}/company/mainInfo" class="logo">
-                <img src="../../../assets/fonts/fontawesome/fa-solid-900.woff" alt="Karlitch" style="color: #dae0e5"
-                     class="navbar-brand">
+                <p alt="" style="color: #dae0e5"
+                   class="navbar-brand">Karlitch</p>
             </a>
             <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
                     data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -313,8 +313,7 @@
                 </div>
                 <div class="row">
 
-                    <form action="${pageContext.request.contextPath}/company/update" method="post"
-                          onclick="submitInfo()">
+                    <form action="${pageContext.request.contextPath}/company/update" method="post">
                         <div class="col-md-6">
                             <div class="card" style="width: 980px;padding-left: 110px;padding-right: 100px">
                                 <div class="card-header">
@@ -345,7 +344,7 @@
                                     </div>
 
                                     <div class="card-action" style="padding-left: 290px">
-                                        <input type="submit" class="btn btn-success" value="确定"
+                                        <input type="submit" class="btn btn-success" value="确定"  onclick="submitInfo()"
                                                style="margin-right: 230px;width: 100px;letter-spacing: 4px"/>
                                     </div>
                                 </div>

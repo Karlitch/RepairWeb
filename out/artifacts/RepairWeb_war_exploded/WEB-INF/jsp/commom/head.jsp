@@ -47,7 +47,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="../../index.jsp">主页</a></li>
                 <li><a href="${pageContext.request.contextPath}/product/all">查询</a></li>
-                <li><a href="${pageContext.request.contextPath}/user/toLogin" target="_blank">登录/注册</a></li>
+                <li><a href="${pageContext.request.contextPath}/company/toLogin" target="_blank">登录/注册</a></li>
                 <li><a href="../../about.jsp">关于我们</a></li>
             </ul>
         </div>

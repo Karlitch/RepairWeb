@@ -33,7 +33,7 @@
             $.post("${pageContext.request.contextPath}/type/jsonAll", function (data) {
                 var typename = " ";
                 for (var i = 0; i < data.length; i++) {
-                    typename += "<a>" + data[i].type + "</a>";
+                    typename += "<a href='${pageContext.request.contextPath}/product/getType?proType="+data[i].id+"'>" + data[i].type + "</a>";
                 }
                 $(".menuTop").html(typename);
             })
@@ -66,7 +66,7 @@
                                 </div>
                             </div>
                         </li>
-                        <li><a href="${pageContext.request.contextPath}/user/toLogin" target="_blank">登录/注册</a></li>
+                        <li><a href="${pageContext.request.contextPath}/company/toLogin" target="_blank">登录/注册</a></li>
                         <li><a href="about.jsp">关于我们</a></li>
                     </ul>
                 </div>

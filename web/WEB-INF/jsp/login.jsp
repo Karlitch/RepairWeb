@@ -61,12 +61,12 @@
         <h3 class="text-center">用户登录</h3>
         <div class="login-form">
             <div class="form-group form-floating-label">
-                <input id="userTel" name="username" type="text" class="form-control input-border-bottom" required>
+                <input id="userTel" style="text-indent: 1em"  name="username" type="text" class="form-control input-border-bottom" required>
                 <label for="userTel" class="placeholder">电话号码</label>
             </div>
             <br>
             <div class="form-group form-floating-label">
-                <input id="userPassword" class="form-control input-border-bottom" name="password" type="password"
+                <input id="userPassword" style="text-indent: 1em"  class="form-control input-border-bottom" name="password" type="password"
                        required>
                 <label for="userPassword" class="placeholder">密码</label>
                 <div class="show-password">

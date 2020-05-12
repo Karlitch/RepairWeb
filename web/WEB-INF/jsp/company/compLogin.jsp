@@ -46,12 +46,12 @@
         <h3 class="text-center">公司登录</h3>
         <div class="login-form">
             <div class="form-group form-floating-label">
-                <input id="compEmail" name="compEmail" type="text" class="form-control input-border-bottom" required>
+                <input id="compEmail" name="compEmail" type="text" style="text-indent: 1em" class="form-control input-border-bottom" required>
                 <label for="compEmail" class="placeholder">公司邮箱</label>
             </div>
             <br>
             <div class="form-group form-floating-label">
-                <input id="compPassword" class="form-control input-border-bottom" name="compPassword" type="password" required>
+                <input id="compPassword" class="form-control input-border-bottom" style="text-indent: 1em"  name="compPassword" type="password" required>
                 <label for="compPassword" class="placeholder">密码</label>
                 <div class="show-password">
                     <i class="flaticon-interface"></i>

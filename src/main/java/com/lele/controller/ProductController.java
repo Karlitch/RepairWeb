@@ -111,4 +111,11 @@ public class ProductController {
         productService.addPro(product);
         return "redirect:/company/showTable";
     }
+
+    @RequestMapping("/getType")
+    public String getProTye(int proType,Model model){
+        List<Product> proType1 = productService.getProType(proType);
+        model.addAttribute("product",proType1);
+        return "show";
+    }
 }

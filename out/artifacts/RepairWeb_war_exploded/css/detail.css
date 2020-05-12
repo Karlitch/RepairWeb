@@ -7,9 +7,11 @@ body{
 }
 
 img {
-    height: 593px;
-    width: 610px;
-    float: right;
+    height: 293px;
+    width: 310px;
+    /*float: right;*/
+    /*padding-top: 90px;*/
+    /*padding-right: 130px;*/
 }
 
 body html {
@@ -19,10 +21,11 @@ body html {
 
 
 .titleTop {
-    padding-top: 30px;
-    padding-left: 70px;
-    letter-spacing: 40px;
-    font-size: 60px;
+    padding-top: 10px;
+    padding-left: 90px;
+    letter-spacing: 23px;
+    font-size: 50px;
+    text-decoration: underline;
     font-weight: bold;
     font-style: oblique;
     color: #a3a0b1;
@@ -30,9 +33,9 @@ body html {
 
 .infoStyle {
     float: right;
-    /*padding-left:65px;*/
-    /*padding-top: 15px;*/
-    /*padding-right: 60px;*/
+    padding-right:105px;
+    padding-top : 50px;
+    /*padding-left: 750px;*/
 
     /*background: white;*/
     /*background-image: linear-gradient(90deg, rgba(200, 0, 0, .5) 50%, transparent 0), linear-gradient(rgba(200, 0, 0, .5) 50%, transparent 0);*/
@@ -40,9 +43,11 @@ body html {
 
 }
 .compName{
+    margin-top: 130px;
     font-size: 35px;
     color: #3b5877;
     font-family: Bahnschrift;
+
 }
 .type{
     font-size: 20px;
@@ -51,14 +56,64 @@ body html {
     letter-spacing: 7px;
     font-family: FangSong;
     text-decoration: overline;
+}
 
+.call{
+    width: 20px;
+    margin: 0 auto;
+    line-height: 24px;
+    font-size: 20px;
+    margin-left: 70px;
+    color: rgba(126, 126, 145, 0.71);
+    margin-top: 50px;
+    letter-spacing: 7px;
+    font-family: FangSong;
+    border: #9c0001;
+    border-style: dotted;
+}
+.email{
+    font-size: 30px;
+    margin-left: 70px;
+    color: rgba(0, 127, 186, 0.71);
+    margin-top: 70px;
+    font-family: FangSong;
+}
+.phone{
+    font-size: 30px;
+    margin-left: 70px;
+    color: rgba(0, 147, 255, 0.71);
+    margin-top: 50px;
+    font-family: FangSong;
+}
+.timework{
+    margin: 0 auto;
+    line-height: 24px;
+    font-size: 20px;
+    margin-left: 100px;
+    color: rgba(61, 28, 60, 0.71);
+    /*margin-top: 50px;*/
+    /*letter-spacing: 7px;*/
+    font-family: FangSong;
+    border: rgba(156, 0, 37, 0.54);
+    border-width: thin;
+    border-style: solid;
+}
+.addr{
+    /*margin: 0 auto;*/
+    line-height: 24px;
+    font-size: 25px;
+    margin-left: 100px;
+    color: rgba(61, 51, 0, 0.51);
+    margin-top: 30px;
+    /*letter-spacing: 7px;*/
+    font-family: FangSong;
 }
 .proinfo{
     font-weight: lighter;
     float: left;
-    padding-left: 20px;
+    padding-left: 50px;
     text-indent: 2em;
-    padding-top: 50px;
+    padding-top: 20px;
     font-size: 30px;
     font-style: italic;
     color: rgba(90, 99, 105, 0.75);

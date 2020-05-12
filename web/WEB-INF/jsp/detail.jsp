@@ -33,20 +33,37 @@
     <hr style="color: rgba(59,88,119,0.29)">
     <p class="titleTop">${proDetail.proName}</p>
     <hr style="color: rgba(102,144,177,0.36);border-style: dashed">
-    <p class="infoStyle">
-            <span class="compName">${proDetail.company.compName}</span>
-        <br>
-            <span class="type">${proDetail.type.type}</span>
-        <br>
-        <br>
-        <br>  </p>
+    <span class="timework">
+    <span>营业时间：${proDetail.company.opentime}  至 </span>
+    <span>${proDetail.company.closetime}</span>
+    </span>
+    <br>
+    <span class="addr">地址：${proDetail.company.compAddr}</span>
+
             <span class="proinfo">“${proDetail.proInfo}”</span>
 
+
 </div>
 
-<div style="float: right;width: 50%;height: 50%">
-    <img src="${proDetail.proImg}" alt="😡">
-</div>
+    <p class="infoStyle">
+        <img src="${proDetail.proImg}" alt="😡">
+
+        <br>
+        <br>
+        <br>
+        <a class="compName" style="padding-left: 100px">${proDetail.company.compName}</a>
+        <br>
+        <span class="type" style="padding-left: 130px">${proDetail.type.type}</span>
+        <br>
+        <br>
+        <span class="call">👽联系我吗👽</span>
+        <br>
+        <span class="email">📧：${proDetail.company.compEmail}</span>
+        <br>
+        <span class="phone">📱：${proDetail.company.compTel}</span>
+
+    </p>
+
 
 
 <script src="../../js/bootstrap.min.js"></script>

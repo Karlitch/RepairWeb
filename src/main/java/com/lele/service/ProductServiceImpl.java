@@ -35,4 +35,8 @@ public class ProductServiceImpl implements ProductService {
     public int addPro(Product product) {
         return productMapper.addPro(product);
     }
+
+    public List<Product> getProType(int proType) {
+        return productMapper.getProType(proType);
+    }
 }

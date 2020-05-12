@@ -34,7 +34,6 @@
                 <ul class="nav sidebar-nav">
                     <li class="sidebar-brand">
                         <a href="#">
-                            Bootstrap 3
                         </a>
                     </li>
                     <li>

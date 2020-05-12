@@ -21,6 +21,7 @@
             <result column="compAddr" property="compAddr"/>
             <result column="compEmail" property="compEmail"/>
             <result column="opentime" property="opentime"/>
+            <result column="closetime" property="closetime"/>
             <result column="compPassword" property="compPassword"/>
         </association>
     </resultMap>
@@ -40,7 +41,7 @@
     </select>
 
     <select id="getProById" resultMap="productThing">
-        select product.id,proName,proImg,proInfo,type.type,company.compName
+        select product.id,proName,proImg,proInfo,type.type,company.compName,compTel,compEmail,closetime,compAddr,opentime
         from product
         left join company on proComp = company.id
         left join type on proType = type.id
@@ -61,4 +62,19 @@
         values (#{proName},#{proInfo},#{proImg},#{proType},#{proComp})
     </insert>
 
+    <select id="getProType" resultMap="productThing">
+        SELECT
+	product.id,
+	proName,
+	proImg,
+	proInfo,
+	type,
+	compName
+FROM
+	product
+LEFT JOIN company ON proComp = company.id
+LEFT JOIN type on proType = type.id
+WHERE proType = #{proType}
+
+    </select>
 </mapper>

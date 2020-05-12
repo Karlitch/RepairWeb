@@ -18,4 +18,6 @@ public interface ProductService {
 
     int addPro(Product product);
 
+    List<Product> getProType( int proType);
+
 }

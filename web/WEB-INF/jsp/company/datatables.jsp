@@ -49,8 +49,8 @@
         <!-- Logo Header -->
         <div class="logo-header">
             <a href="${pageContext.request.contextPath}/company/mainInfo" class="logo">
-                <img src="../../../assets/fonts/fontawesome/fa-solid-900.woff" alt="Karlitch" style="color: #dae0e5"
-                     class="navbar-brand">
+                <p alt="" style="color: #dae0e5"
+                   class="navbar-brand">Karlitch</p>
             </a>
             <button class="navbar-toggler sidenav-toggler ml-auto" type="button" data-toggle="collapse"
                     data-target="collapse" aria-expanded="false" aria-label="Toggle navigation">
@@ -298,7 +298,7 @@
                                         <thead>
                                         <tr>
                                             <th>产品名称</th>
-                                            <th>产品信息</th>
+                                            <th width="360px">产品信息</th>
                                             <th>产品类型</th>
                                             <th style="width: 10%">操作</th>
                                         </tr>

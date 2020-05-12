@@ -18,4 +18,6 @@ public interface ProductMapper {
     int deletePro(@Param("id") int id);
 //    增加产品
     int addPro(Product product);
+//    查询产品类型
+    List<Product> getProType(@Param("proType") int proType);
 }

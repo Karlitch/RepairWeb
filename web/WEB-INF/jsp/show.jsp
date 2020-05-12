@@ -35,15 +35,23 @@
 
 
     <script>
+        var ty = ' ';
         $(function () {
             $.post("${pageContext.request.contextPath}/type/jsonAll", function (data) {
-                var typename = " ";
-                for (var i = 0; i < data.length; i++) {
-                    typename += "<li>" + data[i].type + "</li>";
+                let typename = " ";
+                for (let i = 0; i < data.length; i++) {
+                    ty = data[i].id;
+                    typename += "<a style='padding-left: 6px' href='${pageContext.request.contextPath}/product/getType?proType="+data[i].id+"' >" +' • '+data[i].type+ "</a>";
                 }
                 $("#menuTop").html(typename);
             })
-        })
+        });
+        <%--$(function getType() {--%>
+        <%--    $.get("${pageContext.request.contextPath}/product/getType?proType=",function (data) {--%>
+
+        <%--    })--%>
+        <%--})--%>
+        
     </script>
 </head>
 
@@ -117,7 +125,7 @@
                                                     <li><a href="${pageContext.request.contextPath}/product/getProId/${product.id}"
                                                            title="详情"><i class="fa fa-link"></i></a>
                                                     </li>
-                                                    <li><a href="images/image21.jpg" title="联系"
+                                                    <li><a href="https://mail.qq.com/" title="联系"
                                                            data-lightbox="example-set"
                                                            data-title="Click the right half of the image to move forward."><i
                                                             class="fa fa-user"></i></a></li>
@@ -129,8 +137,8 @@
                             </div>
                         </c:forEach>
                     </div>
-                    <p style="color: #6e94b1;font-size: 23px;font-family: 'Segoe UI Emoji'"> ${error}</p>
-                    <a id="load-more" class="btn btn-skin"> 更多</a>
+                    <p style="color: #b10b00;font-size: 23px;font-family: 'Segoe UI Emoji'"> ${error}</p>
+<%--                    <a id="load-more" class="btn btn-skin"> 更多</a>--%>
                 </div>
             </div>
         </div>
